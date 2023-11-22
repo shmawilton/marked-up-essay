@@ -432,11 +432,58 @@ video {
 }
 
 #references {
-    background-color: var(--references-bg);
+    background-color: var(--references-bg); /* Your chosen color for references background */
     color: var(--mainText);
     padding: 20px;
-    /* ... other styles as needed ... */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    font-family: 'Arial', sans-serif; /* Choose a readable font */
 }
+
+#references h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--accent-color);
+}
+
+#references ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#references li {
+    background: var(--previewBg); /* Slightly different background for each item */
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#references li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#references a {
+    color: var(--btnColor); /* Use a color that stands out */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#references a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.bi-journal-bookmark {
+    font-size: 20px;
+    vertical-align: middle;
+    color: var(--btnColor);
+}
+
 
 
 /* Scrollbar Styles */
