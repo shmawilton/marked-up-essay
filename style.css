@@ -1,0 +1,460 @@
+:root {
+    --primary-color: #152028;  /* Dark navy color */
+    --secondary-color: #192734; /* Electric blue color */
+    --accent-color: #9db3c8;    /* Light grayish blue */
+    --text-color: #e6f1ff;      /* Off-white text color */
+
+    --borderColor: #164D56;
+
+    --mainText: #fff;
+    --sexondaryText: #eeeeee;
+
+    --previewBg: rgb(25, 39, 52, 0.8);
+    --previewShadow: #111921;
+
+    --btnColor: #17a2b8;
+    --references-bg: #2D3E50; /* New color for references section */
+    
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    color: var(--mainText);
+    background-color: var(--primary-color);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    padding: 0%;
+    margin: 0;
+    transition: all 0.5s ease-in-out;
+    max-width: 100%;
+    
+}
+
+body * {
+    transition: 0.5s;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    color: var(--mainText);
+    font-family: 'Russo One', sans-serif;
+    font-weight: 500;
+}
+
+
+p,
+li,
+span,
+label,
+input,
+textarea,
+a {
+    color: var(--mainText);
+    font-family: 'Roboto Mono', monospace;
+}
+
+a {
+    text-decoration: none;
+    color: #17a2b8;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    font-size: 56px;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+.titl {
+    color: var(--mainText);
+    font-size: 3em;
+    position: relative;
+    font-family: monospace;
+    align-items: center;
+    /* right: 10%;
+    left: 10%; */
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    top: 0;
+    max-width: 1100px;
+
+  }
+
+
+.titl::after {
+content: '';
+position: absolute;
+right: -20px;
+bottom: 6px;
+  width: 14px;
+  height: 2px;
+background-color: var(--mainText);
+animation: blink 0.5s linear infinite;
+}
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-y: none;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+header {
+    margin-top: 20px;
+    background: var(--primary-color);
+    color: var(--mainText);
+    padding: 25px;
+    margin-left: 20px;
+    height: 400px;
+    position: relative; 
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Adjust the alpha for more or less dimming */
+    z-index: -1;
+}
+
+
+nav ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+nav ul li {
+    opacity: 0; /* Start items as invisible */
+    animation: slideIn 0.8s ease-out forwards; /* Use forwards to keep the element visible after animation */
+}
+
+/* Sequential animation for each list item */
+nav ul li:nth-child(1) { animation-delay: 0.3s; }
+nav ul li:nth-child(2) { animation-delay: 0.6s; }
+nav ul li:nth-child(3) { animation-delay: 0.9s; }
+nav ul li:nth-child(4) { animation-delay: 1.2s; }
+nav ul li:nth-child(5) { animation-delay: 1.2s; }
+nav ul li:nth-child(6) { animation-delay: 1.2s; }
+nav ul li:nth-child(8) { animation-delay: 1.2s; }
+nav ul li:nth-child(9) { animation-delay: 1.2s; }
+/* nav ul li:nth-child(10) { animation-delay: 1.2s; }
+nav ul li:nth-child(4) { animation-delay: 1.2s; } */ */
+/* Continue as needed for more items */
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#table-of-contents li a {
+    display: block;
+    color: var(--accent-color);
+    font-size: large;
+    padding: 5px 10px;
+}
+
+#table-of-contents li a:hover {
+    text-decoration: underline;
+    font-size: 20px;
+    color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+
+
+section {
+    margin: 0 30px;
+    padding: 20px;
+}
+
+#introduction.animate .content div {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+#introduction.animate .content div:nth-child(odd) {
+    animation: scaleUp 0.8s ease forwards;
+}
+
+#introduction.animate .content div:nth-child(even) {
+    animation: rotateIn 0.8s ease forwards;
+}
+
+
+#introduction {
+    margin-top: 70px;
+    background: var(--primary-color);
+    color: var(--mainText);
+    padding: 25px;
+}
+
+#introduction .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    gap: 10px;
+
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotate(-10deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotate(0);
+        opacity: 1;
+    }
+}
+
+#introduction .content div {
+    border: 1px solid var(--borderColor);
+    padding: 15px;
+    align-items: center;
+    text-align: center;
+    transition: all 0.7s ease-in-out;
+    opacity: 0;  /* Start with divs hidden */
+    transform: translateY(20px); /* Start position for slide-up */
+    animation: fadeInUp 0.8s ease forwards; /* Apply the fadeInUp animation */
+}
+
+#introduction.animate .content div {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+#introduction.animate .content div:nth-child(odd) {
+    animation: scaleUp 0.8s ease forwards;
+}
+
+#introduction.animate .content div:nth-child(even) {
+    animation: rotateIn 0.8s ease forwards;
+}
+
+#introduction .content div:hover {
+    border: 1.5px solid var(--accent-color);
+    padding: 14px;
+}
+
+
+#research-question {
+    background: var(--secondary-color);
+    color: var(--mainText);
+    padding: 25px;
+}
+
+#literature-review div {
+    border: 1px solid var(--borderColor);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 15px;
+}
+
+#literature-review div h3 {
+    align-self: center;
+}
+
+#methodology {
+    background: var(--secondary-color);
+    color: var(--mainText);
+    padding: 25px;
+    margin-top: 20px;
+}
+
+
+.bi {
+    color: var(--accent-color);
+}
+
+#results {
+    background: var(--light-bg-color); /* Choose a light background color */
+    color: var(--dark-text-color); /* Contrast text color */
+    padding: 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+#results h2, #results h3, #results h4 {
+    color: var(--accent-color); /* Accent color for headings */
+    margin-bottom: 15px;
+}
+
+#results .content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#results .img-container img {
+    max-width: 100%; /* Ensures the image is never more than 100% of its container's width */
+    height: auto; /* Keeps the image's aspect ratio intact */
+    display: block; /* Removes any extra space below the image */
+    margin: 0 auto; /* Center align the image */
+}
+
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.styled-table th, .styled-table td {
+    border: 1px solid var(--borderColor);
+    padding: 10px;
+    text-align: left;
+}
+
+.styled-table th {
+    background-color: var(--secondary-color); /* Secondary color for table headers */
+    color: white;
+}
+
+.table-caption {
+    text-align: center;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: var(--dark-text-color);
+}
+
+.img-container, .video-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.image-caption, .video-caption {
+    margin-top: 5px;
+    font-style: italic;
+    color: var(--dark-text-color);
+}
+
+/* Bootstrap icons */
+.bi {
+    margin-right: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #results .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.video-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+video {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+#references ul {
+    color: var(--text-color);
+}
+
+#discussion {
+    background: var(--secondary-color);
+    color: var(--mainText);
+    padding: 25px;
+    margin-top: 20px;
+}
+
+#references {
+    background-color: var(--references-bg);
+    color: var(--mainText);
+    padding: 20px;
+    /* ... other styles as needed ... */
+}
+
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 12px;  /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary-color);  /* Scrollbar track color */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(77, 97, 115);  /* Scrollbar handle color */
+    border-radius: 6px;  /* Rounded corners for the scrollbar handle */
+    border: 3px solid var(--borderColor);  /* Creates a border around the scrollbar handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);  /* Scrollbar handle color on hover */
+}
+
